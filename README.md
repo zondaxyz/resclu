@@ -26,14 +26,16 @@ Here's a step-by-step guide to using the package with an example data fole.
 Get Example dataset at:  https://github.com/zondaxyz/resclu/blob/main/ECCBCluster01.csv 
 (A preprocessed dataset from:
 https://www.kaggle.com/datasets/hunter0007/ecommerce-dataset-for-predictive-marketing-2023)
+
 **Notice：The data must be of numerical type, it cannot contain strings.**
-2. Import resclu package
+
+2.Import resclu package
 ```
 from resclu import *
 # Load your dataset
 data = pd.read_csv('ECCBCluster01.csv')
 ```
-3. Perform Recursive Clustering: Apply dynamic clustering recursively to achieve hierarchical clustering.
+3.Perform Recursive Clustering: Apply dynamic clustering recursively to achieve hierarchical clustering.
 
 
 ```
@@ -45,11 +47,10 @@ a = labels_to_dataframe(a)
 #cut level
 a = cutlevel(a)   
 ```
-4. demonstrate result
+4.demonstrate result
 ```
 print(a)
 ```
-
 ![Img](./FILES/readme.md/img-20240619005804.png)
 
 ## Parameter of Recursive_cluster( )
@@ -74,6 +75,6 @@ print(a)
 - `fun`: This is the function used for PCPTest, which can be 'predcoh' or 'pcavar'. The default value is 'predcoh'.
 
 - `faster`: This is a boolean value that determines whether to use a faster method for clustering. The default value is False.
-- 
+
 ## Parameter of cutlevel( )
 - `t`: This is the threshold used to decide whether to drop a column. If the proportion of non-null values in a column is less than this threshold, the column will be dropped. The default value is 0.1.
